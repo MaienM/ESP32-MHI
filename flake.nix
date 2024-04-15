@@ -26,6 +26,8 @@
           espflash
           ldproxy
         ];
+        LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.libxml2 pkgs.zlib pkgs.stdenv.cc.cc.lib ]}";
+        LIBCLANG_PATH = "${espPkgs.llvm-xtensa}/lib";
       };
     }
   );

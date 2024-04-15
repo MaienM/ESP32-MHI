@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Michon van Dooren <me@maienm.com>"]
 edition = "2021"
 resolver = "2"
-rust-version = "1.71"
+rust-version = "1.67"
 
 [profile.release]
 opt-level = "s"
@@ -25,7 +25,11 @@ embassy = ["esp-idf-svc/embassy-sync", "esp-idf-svc/critical-section", "esp-idf-
 
 [dependencies]
 log = { version = "0.4", default-features = false }
-esp-idf-svc = { version = "0.48", default-features = false }
+esp-idf-svc = { version = "0.47.3", default-features = false }
 
 [build-dependencies]
-embuild = "0.31.3"
+embuild = "0.31.4"
+
+[patch.crates-io]
+embuild = { git = "https://github.com/MaienM/embuild.git", rev = "b5f38f81fc22cfe85b334e62e80dbd5d25218c75" }
+esp-idf-sys = { git = "https://github.com/MaienM/esp-idf-sys.git", rev = "5036db848e7ba5fd239edc6c9a31e5882baabd79" }
